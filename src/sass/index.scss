@@ -1,0 +1,129 @@
+@import './common.scss';
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include display(flex, column);
+    font-size: px2rem(16px);
+    .header {
+        width: 100%;
+        height: px2rem(50px);
+        @include display(flex);
+        padding: 0 px2rem(50px);
+        background: #efeff0;
+        border-bottom: 1px solid #ddd;
+        span {
+            flex: 1;
+            text-align: center;
+            &.active {
+                color: orange;
+            }
+        }
+        a {
+            width: px2rem(50px);
+            height: px2rem(50px);
+            background: url(http://image.read.duokan.com/mfsv2/download/fdsc3/p01j041d5DOT/boUg2EJlVetOMC.png) no-repeat center center;
+            background-size: 40% auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+    .main {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+        .content {
+            @include display(flex);
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            >div {
+                flex-shrink: 0;
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+.book-city-cont {
+    img {
+        width: 100%;
+    }
+}
+
+.bolck-list {
+    >div {
+        @include display(flex);
+        flex-wrap: wrap;
+        a {
+            width: 33.3%;
+            box-sizing: border-box;
+            padding: 0 px2rem(10px);
+            flex-shrink: 0;
+            margin-top: px2rem(10px);
+            dl {
+                height: px2rem(200px);
+            }
+            img {
+                width: 100%;
+                display: block;
+                height: px2rem(150px);
+                box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+.recommend-title {
+    margin: 0 px2rem(10px);
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    height: px2rem(40px);
+    line-height: px2rem(40px);
+    b {
+        color: orange;
+        padding-right: px2rem(15px);
+    }
+    span {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: px2rem(12px);
+        padding-left: px2rem(10px);
+    }
+}
+
+.search-btn {
+    width: 100%;
+    padding: px2rem(10px);
+    a {
+        @include display(block);
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #f5f5f5;
+        color: rgba(0, 0, 0, 0.4);
+        height: px2rem(40px);
+        padding-left: px2rem(40px);
+        line-height: px2rem(40px);
+        background: url(http://image.read.duokan.com/mfsv2/download/fdsc3/p01dSYLeWtSR/tY73MgTfVw7UAS.png) no-repeat px2rem(10px) center;
+        background-size: px2rem(16px) auto;
+    }
+    &.book-self-search {
+        padding-right: px2rem(60px);
+        position: relative;
+        span {
+            position: absolute;
+            right: px2rem(10px);
+            top: px2rem(10px);
+            width: px2rem(40px);
+            height: px2rem(40px);
+            border: 1px solid #f5f5f5;
+            background: url(http://image.read.duokan.com/mfsv2/download/fdsc3/p01yLF3fEj8l/b7UfAdlfufQKML.png) no-repeat center center;
+            background-size: px2rem(16px) auto;
+            &.active {
+                background-image: url(http://image.read.duokan.com/mfsv2/download/fdsc3/p014nDc0lHYW/lDeZ3lL4nmgnmf.png);
+            }
+        }
+    }
+}

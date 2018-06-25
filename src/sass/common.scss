@@ -1,0 +1,249 @@
+$baseline-px:37.5px;
+@function px2rem ($px-values) {
+    $baseline-rem: $baseline-px / 1rem * 1;
+    $px-values: $px-values / $baseline-rem;
+    @return $px-values;
+}
+
+$color:#333;
+@mixin display($box:flex, $direction:row, $col:flex-start, $row:center) {
+    display: $box;
+    flex-direction: $direction;
+    justify-content: $col;
+    align-items: $row;
+}
+
+%boxsizing {
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+.dl-list {
+    padding: 0 px2rem(10px);
+    dl {
+        display: flex;
+        height: px2rem(133px);
+        padding: px2rem(10px) 0;
+        border-bottom: 1px solid #ddd;
+        dt {
+            width: px2rem(85px);
+            height: px2rem(113px);
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            b {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: px2rem(26px);
+                height: px2rem(26px);
+                background: orange;
+                text-align: center;
+                line-height: px2rem(26px);
+                color: #fff;
+            }
+            em {
+                position: absolute;
+                bottom: 0;
+                left: px2rem(4px);
+                font-size: px2rem(14px);
+                color: #fff;
+                text-shadow: 0 px2rem(2px) px2rem(2px) rgba(0, 0, 0, 0.8);
+            }
+        }
+        dd {
+            flex: 1;
+            overflow: hidden;
+            padding-left: px2rem(10px);
+            h3 {
+                font-size: px2rem(14px);
+            }
+            h4 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                font-size: px2rem(12px);
+                color: rgba(0, 0, 0, 0.6);
+            }
+            p {
+                padding-top: px2rem(2px);
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: px2rem(2px) px2rem(3px);
+                    color: green;
+                    border: px2rem(1px) solid green;
+                    border-radius: px2rem(2px);
+                    font-size: px2rem(12px);
+                }
+            }
+        }
+    }
+}
+
+.title {
+    width: 100%;
+    border-left: px2rem(4px) solid orange;
+    text-indent: px2rem(10px);
+    height: px2rem(40px);
+    line-height: px2rem(40px);
+    border-bottom: 1px solid #ddd;
+}
+
+
+a:hover,
+a:active,
+a:link,
+a:visited {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    line-height: 1.5;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    text-align: inherit;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+iframe {
+    display: block;
+}
+
+abbr,
+acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+i,
+code,
+b {
+    font-weight: normal;
+    font-style: normal;
+}
+
+code {
+    background: transparent;
+}
